@@ -51,5 +51,5 @@ y_n : spatio-temporal quantity e.g. precipitation at the nth training point
 U: mean parameter set to 1 corresponding to constant spatio-temporal mean
 
 ## Plots
-The uploaded files contain some example plots from our results on real precipitation data. The precipitation_conotur_plot is the contour plot of predicted precipitation over a spatial region for a specific month. The red dots denote the training points. The precipitation_time_series is a comparison of the actual and predicted percipitation over time for spatial point makred by red cross in the contour plot. The black dashed box and dashed line in these plots constitute a contiguos spatio-temporal test region. 
+The uploaded files contain some example plots from our results on real precipitation data. The precipitation_conotur_plot is the contour plot of predicted precipitation over a spatial region for a specific month. The red dots denote the training points. The precipitation_time_series is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot. The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
 
