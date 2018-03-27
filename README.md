@@ -1,11 +1,11 @@
-# Localized-Spatio-Temporal-Models
+# Learning Spatio-Temporal Models From Streaming Data
 
-The method allows for making prediction of spatio-temporal quantities such as precipitation, air pollution etc. from training data at spatio-temporal coordinates where the quantity of interest in unknown. It is specifically suitable when the tranining data is coming in form of small batches, point by point in a sequential or streaming manner. It is also equally applicable if the entire training data is available. The method makes use of spatio-temporal basis (composed of local b-spline basis in space and Fourier like basis in time) and uses an iterative algorithm for learning the predictor in a sequenctial manner as data comes in. For details see and please cite: Muhammad Osama, Dave Zachariah, Thomas B. Schön, "Learning Localized Spatio-Temporal Models From Streaming Data" http://arxiv.org/abs/1802.03334. 
+The method allows for making prediction of spatio-temporal quantities such as precipitation, air pollution, etc. from a stream of data. It is also equally applicable if the entire training data is available. The method makes use of a localized spatio-temporal basis and uses an online algorithm for learning the predictor in a sequential manner as space-time datapoints are collected. For details see and please cite: Muhammad Osama, Dave Zachariah, Thomas B. Schön, "Learning Localized Spatio-Temporal Models From Streaming Data" http://arxiv.org/abs/1802.03334. 
 
 There are two main files implemented in Python: 'basis.py' and 'Learning_from_streaming_data.py'. An 'example.py' file describes what variables to initialize and how to use these former two files for training and then evaluating the predictor at desired spatio-temporal coordinates. Below we provide a short description of each file.
 
 ## Example plots
-Below we show some example plots from our results on real precipitation data. The precipitation_conotur_plot is the contour plot of predicted precipitation over a spatial region for a specific month. The red dots denote the training points. The precipitation_time_series is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot. The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
+Below we show some example plots from our results on real precipitation data. The first plot shows the predicted precipitation over a spatial region for a specific month (t=53). The red dots denote the training points. The next plot is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot.  The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
 
 ![precipitation_contour_plot](https://user-images.githubusercontent.com/37805794/37966015-5e6c38ba-31c7-11e8-8054-68bb2176e23f.png)
 
