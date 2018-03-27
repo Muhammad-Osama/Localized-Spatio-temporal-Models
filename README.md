@@ -7,6 +7,8 @@ There are two main files implemented in Python: 'basis.py' and 'Learning_from_st
 ## Example plots
 The uploaded files contain some example plots from our results on real precipitation data. The precipitation_conotur_plot is the contour plot of predicted precipitation over a spatial region for a specific month. The red dots denote the training points. The precipitation_time_series is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot. The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
 
+![Contour plot](muhammad-osama.github.com/repository/precipitation_contour_plot.png)
+
 ## A short description of variables in each .py file
 ### Learning_from_streaming_data.py
 
