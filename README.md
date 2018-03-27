@@ -4,8 +4,11 @@ The method allows for making prediction of spatio-temporal quantities such as pr
 
 There are two main files implemented in Python: 'basis.py' and 'Learning_from_streaming_data.py'. An 'example.py' file describes what variables to initialize and how to use these former two files for training and then evaluating the predictor at desired spatio-temporal coordinates. Below we provide a short description of each file.
 
+## Example plots
+The uploaded files contain some example plots from our results on real precipitation data. The precipitation_conotur_plot is the contour plot of predicted precipitation over a spatial region for a specific month. The red dots denote the training points. The precipitation_time_series is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot. The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
+
 ## A short description of variables in each .py file
-## Learning_from_streaming_data.py
+### Learning_from_streaming_data.py
 
 This function is used to learn the weights 'w_hat' from training data which are used later for evaluating the predictor.
 
@@ -29,7 +32,7 @@ y_n : spatio-temporal quantity e.g. precipitation at the nth training point
 
 U: mean parameter set to 1 corresponding to constant spatio-temporal mean
 
-## basis.py
+### basis.py
 The basis.py evaluates a spatio-temporal basis at a specific spatio-temporal point. The function is called in the following way:
 
 [alpha_sparse_n,ind_alpha_n] = basis.spatio_temporal_basis(x_n,mn,mx,Ns,Nt,sup)
@@ -51,6 +54,5 @@ alpha_sparse_n: Ns^(D-1)*(Nt^2+1)x1 sparse array of spatio-temporal basis for th
 ind_alpha_n: array containing indices of the non-zero elements in alpha_sparse_n
 
 
-## Plots
-The uploaded files contain some example plots from our results on real precipitation data. The precipitation_conotur_plot is the contour plot of predicted precipitation over a spatial region for a specific month. The red dots denote the training points. The precipitation_time_series is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot. The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
+
 
