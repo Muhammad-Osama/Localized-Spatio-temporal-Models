@@ -2,7 +2,7 @@
 
 The method allows for making prediction of spatio-temporal quantities such as precipitation, air pollution, etc. from a stream of data. It is also equally applicable if the entire training data is available. The method makes use of a localized spatio-temporal basis and uses an online algorithm for learning the predictor in a sequential manner as space-time datapoints are collected. For details see and please cite: Muhammad Osama, Dave Zachariah, Thomas B. Schön, "Learning Localized Spatio-Temporal Models From Streaming Data" http://arxiv.org/abs/1802.03334. 
 
-There are two main files implemented in Python: 'basis.py' and 'Learning_from_streaming_data.py'. An 'example.py' file describes what variables to initialize and how to use these former two files for training and then evaluating the predictor at desired spatio-temporal coordinates. Below we provide a short description of each file. It is assumed that the training data is organized in a csv file in a way described in the example.py file. For example for 2D space time, the nth line in the training.csv represents a traning point with format [y_n, s1_n, s2_n, t_n].
+There are two main files implemented in Python: 'basis.py' and 'Learning_from_streaming_data.py'. An 'example.py' file describes what variables to initialize and how to use these former two files for training and then evaluating the predictor at desired spatio-temporal coordinates. Below we provide a short description of each file. It is assumed that the training data is organized in a csv file in a way described in the example.py file. For example for 2D space time, the i:th line in the training.csv represents a traning point with format [y_i, s1_i, s2_i, t_i].
 
 
 ## Example plots
