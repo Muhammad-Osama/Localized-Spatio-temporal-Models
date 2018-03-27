@@ -14,20 +14,13 @@ def cubic_bspline(x,cen,sup):
         
     return f
 #
-def temporal_basis(t,Nt,Lt,fmin,fmax):
+def temporal_basis(t,Nt,Lt): 
    """evaluates laplace basis at time coordinate 't'. Output is 1xNt temporal basis vector"""
-   k = input('Laplace basis (1) or fixed frequency range basis (2):? ')
    Phit = [1]*Nt
    import math
-   if k==1:
-       for i in range(Nt):
-           Phit[i] = Phit[i]*math.sin(math.pi*(i+1)*(t+Lt)/(2*Lt))/math.sqrt(Lt)
-   else:
-       import numpy
-       f = numpy.linspace(fmin,fmax,num=Nt)
-       for i in range(Nt):
-           Phit[i] = Phit[i]*math.sin(math.pi*2*f[i])
-   
+   for i in range(Nt):
+        Phit[i] = Phit[i]*math.sin(math.pi*(i+1)*(t+Lt)/(2*Lt))/math.sqrt(Lt)
+        
    return [1]+Phit
 #
 def spatial_basis(xs,Ns,mn,mx,sup):
