@@ -2,7 +2,8 @@
 
 The method allows for making prediction of spatio-temporal quantities such as precipitation, air pollution, etc. from a stream of data. It is also equally applicable if the entire training data is available. The method makes use of a localized spatio-temporal basis and uses an online algorithm for learning the predictor in a sequential manner as space-time datapoints are collected. For details see and please cite: Muhammad Osama, Dave Zachariah, Thomas B. Schön, "Learning Localized Spatio-Temporal Models From Streaming Data" http://arxiv.org/abs/1802.03334. 
 
-There are two main files implemented in Python: 'basis.py' and 'Learning_from_streaming_data.py'. An 'example.py' file describes what variables to initialize and how to use these former two files for training and then evaluating the predictor at desired spatio-temporal coordinates. Below we provide a short description of each file.
+There are two main files implemented in Python: 'basis.py' and 'Learning_from_streaming_data.py'. An 'example.py' file describes what variables to initialize and how to use these former two files for training and then evaluating the predictor at desired spatio-temporal coordinates. Below we provide a short description of each file. It is assumed that the training data is organized in a csv file in a way described in the example.py file. For example for 2D space time, the nth line in the training.csv represents a traning point with format [y_n, s1_n, s2_n, t_n].
+
 
 ## Example plots
 Below we show some example plots from our results on real precipitation data. The first plot shows the predicted precipitation over a spatial region for a specific month (t=53). The red dots denote the training points. The next plot is a comparison of the actual and predicted percipitation over time for spatial point marked by red cross in the contour plot.  The black dashed box and dashed line in these plots constitute a contiguous spatio-temporal test region. 
@@ -20,6 +21,7 @@ The function is called in a for loop for each training point in the following wa
 
 [w_hat, Gamma_sparse, rho, kappa] = func_newsample_covlearn(y_n, alpha_sparse_n, ind_alpha_n, Gamma_sparse, rho, kappa, w_hat, n+1, L, U)
 
+Inputs:
 y_n: the spatio-temporal quantity of interest
 
 alphas_sparse_n, ind_alpha_n: from basis.py
@@ -30,8 +32,6 @@ n+1: see example.py file
 
 L: The number of itereations of the algortihm for each training point
 
-It is assumed that the training data is organized in a csv file in a way described in the example.py file. For example for 2D space time, the nth line in the training.csv represents a traning point with format [y_n, s1_n, s2_n, t_n]:
-
 y_n : spatio-temporal quantity e.g. precipitation at the nth training point
 
 U: mean parameter set to 1 corresponding to constant spatio-temporal mean
@@ -41,6 +41,7 @@ The basis.py evaluates a spatio-temporal basis at a specific spatio-temporal poi
 
 [alpha_sparse_n,ind_alpha_n] = basis.spatio_temporal_basis(x_n,mn,mx,Ns,Nt,sup)
 
+Inputs:
 x_n: Dx1 array containing spatio-temporal coordinates e.g. for 2D space time: x_n = [s1, s2, t] where [s1,s2] are the spatial coordinates in Euclidean space and 't' is the time coordinates. If spatial coordinates are [longitude, latitude] they must be converted to Euclidean space. We provide a function latlon_conversion.py to do that
 
 mn: Dx1 array containing the lower limit of each dimension
